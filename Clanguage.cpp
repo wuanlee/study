@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 //#include <malloc.h>
-//#include <string.h>
+#include <string.h>
 void myprint(int m_i);
 void mychar(char o_str);
 long factnum(int sum );
@@ -109,14 +109,43 @@ int main()
 	printf("%s", str);
 	free(str);
 	*/
-	char str[512] = {0};
+	//char str[512] = {0};
 	//gets_s(str);
 	//printf("%s",str);
-
+/*
 	fgets(str,100,stdin);
 	printf(str);
 
 	fputs(str,stdout);
+	*/
+	char str[512] = {0};
+	char Dstr2[100] = {0};
+	char Sstr2[100] = { 0 };
+	gets_s(Sstr2);
+	gets_s(Dstr2);
+
+	//strcat(Dstr2, Sstr2);
+	//strncat(Dstr2, Sstr2, 4);
+	/*int flag = 0;
+	flag = strcmp(Dstr2, Sstr2);
+	if (flag == 0) {
+		printf("%s\n", "相等");
+	}
+	else {
+		printf("%s\n", "不相等");
+	}
+	printf("%s\n", Dstr2);
+	sprintf(Sstr2, "%s=%s", Sstr2, Dstr2);
+	printf("%s", Sstr2);
+	*/
+	FILE *m_file = NULL;
+	m_file = fopen("Test.txt", "w");
+
+	if (m_file == NULL) {
+		printf("文件打开失败");
+		return 0;
+	}
+	fclose(m_file);
 
 	getch();
 	return 0;
